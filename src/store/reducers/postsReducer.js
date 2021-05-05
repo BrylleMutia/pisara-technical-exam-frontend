@@ -3,7 +3,6 @@ import { GET_POSTS } from "../actions/types";
 const initialState = {
   data: [],
   current_page: 1,
-  totalPages: 1,
   first_page_url: "",
   from: 1,
   last_page: 1,

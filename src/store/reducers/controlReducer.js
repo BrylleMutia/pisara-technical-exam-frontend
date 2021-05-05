@@ -1,7 +1,7 @@
 import { CHANGE_TAB, GET_ERRORS, CLEAR_ERRORS, LOADED, LOADING } from "../actions/types";
 
 const initialState = {
-  tab: "Users",
+  tab: "users",
   isLoading: false,
   error: {
     message: "",
@@ -45,7 +45,7 @@ export default function (state = initialState, action) {
           status: null,
         },
       };
-      
+
     default:
       return {
         ...state,
