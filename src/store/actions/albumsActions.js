@@ -1,0 +1,20 @@
+import { GET_ALBUMS } from "./types";
+import { changeTab, clearErrors, hideLoading, returnErrors, showLoading } from "./controlActions";
+import axios from "axios";
+
+
+export const getAlbums = (page = 1) => (dispatch) => {
+  dispatch(showLoading());
+
+  axios
+    .get(`/albums?page=${page}`)
+    .then((response) =>
+      dispatch({
+        type: GET_ALBUMS,
+        payload: response.data,
+      })
+    )
+    .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
+
+  dispatch(hideLoading());
+};
